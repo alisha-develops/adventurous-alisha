@@ -1,6 +1,7 @@
-gsap.to ("#box", {
-    x:1000,
-    duration:10,
-    delay:2,
-    y:700
+gsap.from (".intro h1", {
+    opacity:0,
+    duration:1,
+    y:50,
+    delay:1,
+    stagger:0.3
 })
