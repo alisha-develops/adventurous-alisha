@@ -1,0 +1,7 @@
+#box {
+    background-color: blueviolet;
+    height: 300px;
+    width: 300px;
+    border: 2px solid rgb(71, 6, 63);
+    border-radius: 50%;
+}
