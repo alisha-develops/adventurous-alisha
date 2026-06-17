@@ -69,8 +69,45 @@ body {
     font-family: 'Sterion';
     width: 100%;
     height: 100vh;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgb(109, 54, 29);
     background: linear-gradient(180deg, rgb(178, 209, 238), #f0e6d3, rgb(230, 230, 128), rgb(247, 198, 109));
+}
+
+.myphotos {
+    border-radius: 10px;
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
+    margin-top: 50px;
+    border: 7px dashed rgb(109, 54, 29);
+}
+
+.myphotos:nth-child(1) {
+    transform: rotate(-5deg);
+    margin-top: 20px;
+}
+
+.myphotos:nth-child(2) {
+    transform: rotate(3deg);
+    margin-top: -20px;
+}
+
+.myphotos:nth-child(3) {
+    transform: rotate(-2deg);
+    margin-top: 30px;
+}
+
+.photosline {
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    gap: 80px;
+    align-items: center;
+    justify-content: center;
 }
 
 .projects {
@@ -80,17 +117,55 @@ body {
     color:rgb(83, 66, 18);
     background: linear-gradient(180deg, rgb(247, 198, 109), rgb(192, 139, 69), rgb(178, 209, 238));
     text-align: center;
+    position: relative;
 }
+
+#mountainsvg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 
 @media (max-width: 768px) {
     header {
     height: 50vh;
   }
 
-  #cloudsvg, {
+  #cloudsvg {
     width: 100%;
     height: 100%;
   }
+  
+  .about {
+    height: auto;
+    min-height: 100vh;
+    padding: 40px 20px;
+  }
+
+  .projects {
+    height: auto;
+    min-height: 50vh;
+    padding: 20px;
+  }
+
+  #mountainsvg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+  }
+
+  .photosline {
+    flex-direction: column;
+  }
+  
+  .myphotos {
+    height: 150px;
+    width: 150px;
+  }
+
   .intro {
     top: 15%;
     left: 5%;
@@ -103,12 +178,6 @@ body {
   .intro h1:last-child {
     font-size: 0.9rem;
   }
-}
-
-#mountainsvg {
-    width: 100%;
-    height: auto;
-    display: block;
 }
 
 /* #box {
