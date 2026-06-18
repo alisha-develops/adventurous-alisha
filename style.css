@@ -115,18 +115,23 @@ body {
     width: 100%;
     height: 100vh;
     color:rgb(83, 66, 18);
-    background: linear-gradient(180deg, rgb(247, 198, 109), rgb(192, 139, 69), rgb(178, 209, 238));
+    background: linear-gradient(180deg, rgb(247, 198, 109), rgb(192, 139, 69));
     text-align: center;
     position: relative;
     overflow: hidden;
 }
 
 #mountainsvg {
-    width: 100%;
-    height: auto;
     display: block;
     transform: scale(1.1);
     transform-origin: center center;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    display: block;
 }
 
 .campsvg {
@@ -143,6 +148,17 @@ body {
 
 .campsvg:hover {
     transform: rotate(5deg) scale(1.3);filter: brightness(1.5) drop-shadow(0 0 10px rgba(255, 200, 50, 0.8));
+}
+
+.forest {
+    font-family: 'Sterion';
+    width: 100%;
+    height: 100vh;
+    color:rgb(83, 66, 18);
+    background: linear-gradient(180deg, rgb(192, 139, 69), rgb(133, 90, 34), rgb(80, 53, 19));
+    text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
 @media (max-width: 768px) {
