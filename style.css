@@ -118,12 +118,15 @@ body {
     background: linear-gradient(180deg, rgb(247, 198, 109), rgb(192, 139, 69), rgb(178, 209, 238));
     text-align: center;
     position: relative;
+    overflow: hidden;
 }
 
 #mountainsvg {
     width: 100%;
     height: auto;
     display: block;
+    transform: scale(1.1);
+    transform-origin: center center;
 }
 
 
