@@ -316,7 +316,7 @@ body {
     color: rgb(33, 79, 122);
     cursor: pointer;
     transition: transform 0.3s ease, filter 0.3s ease;
-    cursor: url('photos/cursosr.png'), auto;
+    cursor: url('photos/cursor.png'), auto;
 }
 
 #startbutton:hover {
