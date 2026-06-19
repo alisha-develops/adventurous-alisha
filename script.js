@@ -12,7 +12,6 @@ tl.to("#planesvg", {
     document.body.style.overflow = "scroll"; 
 }, null, "+=2");
 
-// document.getElementById("startbutton").addEventListener("click", () => {
-//     document.getElementById("startbutton").style.display = "none";
-//     tl.play();
-// });
+document.getElementById("closedbook").addEventListener("click", () => {
+    document.getElementById("openbook").classList.toggle("active");
+});
