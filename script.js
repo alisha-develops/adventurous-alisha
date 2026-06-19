@@ -20,15 +20,18 @@ document.getElementById("startbutton").addEventListener("click", () => {
 const openbook = document.getElementById("openbook");
 const closedbook = document.getElementById("closebook");
 const backdrop = document.getElementById("backdrop");
+const bookcontent = document.getElementById("bookcontent");
 
 document.getElementById("closedbook").addEventListener("click", () => {
     openbook.classList.toggle("active");
     closedbook.classList.toggle("active");
     backdrop.classList.toggle("active");
+    bookcontent.classList.toggle("active");
 });
 
 closedbook.addEventListener("click", () => {
     openbook.classList.remove("active");
     closedbook.classList.remove("active");
     backdrop.classList.remove("active");
+    bookcontent.classList.remove("active");
 });

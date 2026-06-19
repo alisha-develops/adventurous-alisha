@@ -83,51 +83,6 @@ body {
     font-size: 1.5rem;
 }
 
-/* .about {
-    font-family: 'Sterion';
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: rgb(109, 54, 29);
-    background: linear-gradient(180deg, rgb(178, 209, 238), #f0e6d3, rgb(230, 230, 128), rgb(247, 198, 109));
-}
-
-.myphotos {
-    border-radius: 10px;
-    height: 250px;
-    width: 250px;
-    object-fit: cover;
-    margin-top: 50px;
-    border: 7px dashed rgb(109, 54, 29);
-}
-
-.myphotos:nth-child(1) {
-    transform: rotate(-5deg);
-    margin-top: 20px;
-}
-
-.myphotos:nth-child(2) {
-    transform: rotate(3deg);
-    margin-top: -20px;
-}
-
-.myphotos:nth-child(3) {
-    transform: rotate(-2deg);
-    margin-top: 30px;
-}
-
-.photosline {
-    display: flex;
-    flex-direction: row;
-    margin-top: 50px;
-    gap: 80px;
-    align-items: center;
-    justify-content: center;
-} */
-
 .projects {
     font-family: 'Sterion';
     width: 100%;
@@ -267,6 +222,60 @@ body {
 
 #openbook.active {
     display: block;
+}
+
+#bookcontent {
+    position: fixed;
+    top: 35%;
+    left: 44%;
+    transform: translate(-50%, -50%) rotate(-5deg);
+    z-index: 101;
+    display: none;
+    width: 800px;
+    padding: 60px 80px;
+}
+
+#bookcontent.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#bookcontent .photosline {
+    display: flex;
+    flex-direction: row;
+    gap: 55px;
+    align-items: center;
+    justify-content: center;
+}
+
+#bookcontent .myphotos {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    outline: 4px dashed rgb(109, 54, 29);
+    outline-offset: 10px;
+    margin-top: 0;
+}
+
+#bookcontent .myphotos:nth-child(1) {
+    transform: rotate(-5deg);
+}
+
+#bookcontent .myphotos:nth-child(2) {
+    transform: rotate(3deg);
+    position: relative;
+    top: 150px;
+    left: -30px;
+}
+
+#bookcontent .myphotos:nth-child(3) {
+    transform: rotate(-2deg);
+    position: relative;
+    top: 50px;
+    left: 100px;
 }
 
 #closebook {
