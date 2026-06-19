@@ -44,6 +44,15 @@ body {
     filter: brightness(0.85) contrast(1.5) saturate(0.5);
 }
 
+#planesvg {
+    position: absolute;
+    width: 150px;
+    height: auto;
+    top: 40%;
+    left: -200px;
+    z-index: 3;
+}
+
 .intro {
     position: absolute;
     top: 20%;
