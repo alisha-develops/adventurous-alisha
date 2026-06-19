@@ -65,7 +65,7 @@ body {
     font-size: 1.5rem;
 }
 
-.about {
+/* .about {
     font-family: 'Sterion';
     width: 100%;
     height: 100vh;
@@ -108,14 +108,14 @@ body {
     gap: 80px;
     align-items: center;
     justify-content: center;
-}
+} */
 
 .projects {
     font-family: 'Sterion';
     width: 100%;
     height: 100vh;
     color:rgb(83, 66, 18);
-    background: linear-gradient(180deg, rgb(247, 198, 109), rgb(192, 139, 69));
+    background: linear-gradient(180deg, rgb(178, 209, 238), #dfbd28, rgb(228, 182, 31), rgb(201, 136, 15));
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -151,7 +151,7 @@ body {
     width: 100%;
     height: 100vh;
     color:rgb(83, 66, 18);
-    background: linear-gradient(180deg, rgb(192, 139, 69), rgb(8, 77, 25), rgb(38, 80, 9));
+    background: linear-gradient(180deg,  rgb(201, 136, 15), rgb(8, 77, 25), rgb(38, 80, 9));
     text-align: center;
     overflow: hidden;
     position:relative;
@@ -181,6 +181,23 @@ body {
 .bonfiresvg:hover {
     transform: translateX(-50%) scale(1.3);
     filter: brightness(1.5) drop-shadow(0 0 10px rgba(255, 150, 50, 0.8));
+}
+
+.book {
+    position: absolute;
+    bottom: 15%;
+    left: 45%;
+    transform: rotate(-8deg);
+    z-index: 3;
+    width: 80px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.book:hover {
+    transform: translateX(-8%) scale(1.3);
+    filter: brightness(1.5) drop-shadow(0 0 10px rgba(78, 46, 16, 0.8));
 }
 
 @media (max-width: 768px) {
