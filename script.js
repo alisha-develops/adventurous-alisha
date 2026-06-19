@@ -1,17 +1,18 @@
-let tl = gsap.timeline();
+const tl = gsap.timeline({paused: true});
 
-tl.to("#planesvg", {
-    left: "60%",
+tl.to("#planesvg", { 
+    left: "60%", 
     duration: 5,
-    ease: "power1.inOut",
-    delay: 0.5
+    ease: "power1.inOut"
 })
 .call(() => {
-    document.getElementById("planesvg").src = "svgcode/planedoor.svg"
+    document.getElementById("planesvg").src = "svgcode/planedoor.svg";
 })
-.to("#planesvg", {
-    x: -5,
-    duration: 1.0,
-    yoyo: true,
-    repeat: 3
-})
+.call(() => {
+    document.body.style.overflow = "scroll"; 
+}, null, "+=2");
+
+// document.getElementById("startbutton").addEventListener("click", () => {
+//     document.getElementById("startbutton").style.display = "none";
+//     tl.play();
+// });
