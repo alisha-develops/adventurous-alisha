@@ -269,6 +269,22 @@ body {
     display: block;
 }
 
+#closebook {
+    position: fixed;
+    top: 12%;
+    left: 67%;
+    z-index: 101;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: url('photos/cursor.png'), pointer;
+    display: none;
+    color: rgb(83, 66, 18);
+}
+
+#closebook.active {
+    display: block;
+}
 
 #startbutton {
     position: absolute;

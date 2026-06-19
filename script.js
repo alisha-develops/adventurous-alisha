@@ -12,6 +12,15 @@ tl.to("#planesvg", {
     document.body.style.overflow = "scroll"; 
 }, null, "+=2");
 
+const openbook = document.getElementById("openbook");
+const closedbook = document.getElementById("closebook");
+
 document.getElementById("closedbook").addEventListener("click", () => {
-    document.getElementById("openbook").classList.toggle("active");
+    openbook.classList.toggle("active");
+    closedbook.classList.toggle("active");
+});
+
+closedbook.addEventListener("click", () => {
+    openbook.classList.remove("active");
+    closedbook.classList.remove("active");
 });
