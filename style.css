@@ -153,8 +153,18 @@ body {
     color:rgb(83, 66, 18);
     background: linear-gradient(180deg, rgb(192, 139, 69), rgb(133, 90, 34), rgb(80, 53, 19));
     text-align: center;
+    overflow: hidden;
+    position:relative;
 }
 
+#forestsvg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    transform: scaleX(1.50);
+    object-fit: fill;
+    position: relative;
+}
 
 @media (max-width: 768px) {
     header {
