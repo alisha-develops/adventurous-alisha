@@ -35,3 +35,13 @@ closedbook.addEventListener("click", () => {
     backdrop.classList.remove("active");
     bookcontent.classList.remove("active");
 });
+
+const chatwindow = document.getElementById("chatwindow");
+
+document.getElementById("closedfire").addEventListener("click", () => {
+    chatwindow.classList.toggle("active");
+});
+document.getElementById("closechat").addEventListener("click",() => {
+    chatwindow.classList.remove("active");
+});
+
