@@ -42,14 +42,21 @@
         <p>This is the next section</p>
         <img src="photos/burning_fire-removebg-preview (1).png" class="bonfiresvg" id="closedfire">
         <div id="chatwindow">
-            <button id="closechat">✕</button>
-            <div id="chat">
-                <p id="chattext">hey traveller! welcome to my bonfire!</p>
+            <div id="chatting">
+                <button id="closechat">✕</button>
+                <div id="chat">
+                    <p id="chattext">hey traveller! welcome to my bonfire!</p>
+                </div>
+                <div id="responses">
+                    <button class="reply">tell me about yourself!</button>
+                    <button class="reply">what projects have you worked on?</button>
+                    <button class="reply">how can i reach you?</button>
+                </div>
+                <button id="playgame">wanna play a mini game?</button>
             </div>
-            <div id="responses">
-                <button class="reply">tell me about yourself!</button>
-                <button class="reply">what projects have you worked on?</button>
-                <button class="reply">how can i reach you?</button>
+            <div id="game"style="display:none; position:absolute; top:0; left:0; width:100%; height:100%;">
+                <button id="backtofire">← back to campfire</button>
+                <iframe id="gameframe" src="game/game.html"></iframe>
             </div>
         </div>
         <img src="photos/an-old-book-with-a-ring-on-it-vector-removebg-preview.png" class="book" id="closedbook">

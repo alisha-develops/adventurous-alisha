@@ -41,7 +41,17 @@ const chatwindow = document.getElementById("chatwindow");
 document.getElementById("closedfire").addEventListener("click", () => {
     chatwindow.classList.toggle("active");
 });
+
 document.getElementById("closechat").addEventListener("click",() => {
     chatwindow.classList.remove("active");
 });
 
+document.getElementById("playgame").addEventListener("click", () => {
+    document.getElementById("game").style.display = "block";
+    document.getElementById("chatting").style.display = "none";
+});
+
+document.getElementById("backtofire").addEventListener("click", () => {
+    document.getElementById("game").style.display = "none";
+    document.getElementById("chatting").style.display = "block";
+});
