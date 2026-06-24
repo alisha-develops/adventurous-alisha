@@ -1,5 +1,17 @@
 my new personal site! (more like my playground lolololl)
 
+## upcoming features!
+
+im planning to build a full web game using phaser.js (which is basically going to be a whole project on its own) and embed it directly into the current bonfire window using an `<iframe>` so you can play it seamlessly right inside the site without leaving the page.
+
+<table>
+  <tr>
+    <td align="center" style="padding: 15px; background-color: #0d1117; border: 1px solid #30363d; border-radius: 6px;">
+      <p style="margin-top: 0;">this is the exact section where i'll be presenting/previewing the game later on.</p>
+      <img src="https://github.com/user-attachments/assets/c9ce7af5-ba85-489e-8b78-7c9ee1cdc757" alt="game presentation area" max-width="650" width="100%">
+    </td>
+  </tr>
+</table>
 
 ## a must read for horizon reviewer(s)!!! (hackatime glitch info)
 
