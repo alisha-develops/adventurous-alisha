@@ -1,6 +1,6 @@
 my new personal site! (more like my playground lolololl) 
 
-[jump to hackatime glitch info](#-a-must-read-for-horizon-reviewers-hackatime-glitch-info)
+[jump to hackatime glitch info](#a-must-read-for-horizon-reviewers-hackatime-glitch-info)
 
 ## upcoming features!
 
