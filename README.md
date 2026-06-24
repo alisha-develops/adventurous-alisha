@@ -32,4 +32,5 @@ i took some screenshots for full transparency so you can see what's actually hap
 also: you see svgcode folder in the file tree, so the svg code here was exported from figma after hand-drawing the designs, opened up in notepad, and copy-pasted directly into vs code. the photos and assets folders just have standard pngs and stuff.
 
 ### reach out!
+
 if you're coming from hackclub wrokspace then pls reach me out on slack for any queries: @Alisha!
