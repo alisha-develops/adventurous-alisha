@@ -8,6 +8,16 @@ tl.to("#planesvg", {
 .call(() => {
     document.getElementById("planesvg").src = "svgcode/planedoor.svg";
 })
+.to("#ch2", { 
+    opacity: 1, 
+    duration: 0.3 
+}, "+=0.5")
+.to("#ch2", { 
+    y: 400,
+    x: -100,
+    duration: 6, 
+    ease: "power1.out",
+})
 .call(() => {
     document.body.style.overflow = "scroll"; 
 }, null, "+=2");
@@ -16,7 +26,6 @@ document.getElementById("startbutton").addEventListener("click", () => {
     document.getElementById("startbutton").style.display = "none";
     tl.play();
 });
-
 const openbook = document.getElementById("openbook");
 const closedbook = document.getElementById("closebook");
 const backdrop = document.getElementById("backdrop");

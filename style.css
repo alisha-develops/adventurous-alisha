@@ -62,6 +62,17 @@ body {
     z-index: 3;
 }
 
+#ch2 {
+    position: absolute;
+    top: 40%;
+    left: 64%;
+    opacity:0; 
+    left:58%; 
+    width:150px;
+    z-index: 9999;
+}
+
+
 .intro {
     position: absolute;
     top: 20%;
