@@ -8,19 +8,63 @@ tl.to("#planesvg", {
 .call(() => {
     document.getElementById("planesvg").src = "svgcode/planedoor.svg";
 })
-.to("#ch2", { 
+
+.to("#ch1", { 
     opacity: 1, 
     duration: 0.3 
 }, "+=0.5")
-.to("#ch2", { 
+
+.to("#ch1", { 
     y: 400,
     x: -100,
+    rotation: 360,
     duration: 6, 
     ease: "power1.out",
 })
 .call(() => {
+    gsap.set("#ch1", { 
+        rotation: 15 
+    });
+})
+.call(() => {
     document.body.style.overflow = "scroll"; 
 }, null, "+=2");
+
+document.addEventListener("keydown", (e) => {
+    const ch1 = document.getElementById("ch1");
+    const rect = ch1.getBoundingClientRect();
+    
+    if (e.key === "d" && rect.right < window.innerWidth) {
+        gsap.to("#ch1", { 
+            x: "+=20", 
+            duration: 0.1, 
+            ease: "none" 
+        });
+        ch1.style.transform = "scaleX(1)";
+    }
+    if (e.key === "a" && rect.left > 0) {
+        gsap.to("#ch1", { 
+            x: "-=20", 
+            duration: 0.1, 
+            ease: "none" 
+        });
+        ch1.style.transform = "scaleX(-1)";
+    }
+    if (e.key === "w" && rect.top > 0) {
+        gsap.to("#ch1", { 
+            y: "-=15", 
+            duration: 0.1, 
+            ease: "none" 
+        });
+    }
+    if (e.key === "s" && rect.bottom < window.innerHeight) {
+        gsap.to("#ch1", { 
+            y: "+=15", 
+            duration: 0.1, 
+            ease: "none" 
+        });
+    }
+});
 
 document.getElementById("startbutton").addEventListener("click", () => {
     document.getElementById("startbutton").style.display = "none";
