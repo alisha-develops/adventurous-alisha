@@ -313,56 +313,110 @@ body {
 
 #bookcontent {
     position: fixed;
-    top: 35%;
-    left: 44%;
+    top: 48%; 
+    left: 50%;
     transform: translate(-50%, -50%) rotate(-5deg);
     z-index: 101;
     display: none;
-    width: 800px;
-    padding: 60px 80px;
+    width: 780px;
+    height: 460px; 
 }
 
 #bookcontent.active {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
+    padding: 0 40px;
 }
 
-#bookcontent .photosline {
+#bookcontent {
+    position: fixed;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-5deg);
+    z-index: 101;
+    display: none;
+    width: 780px;
+    height: 460px; 
+}
+
+#bookcontent.active {
     display: flex;
     flex-direction: row;
-    gap: 55px;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
+    padding: 0 40px;
 }
 
-#bookcontent .myphotos {
-    height: 100px;
-    width: 100px;
+.leftpage {
+    width: 42%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding-left: 20px;
+    padding-top: 15px;
+}
+
+.leftpage .myphotos {
+    height: 90px;
+    width: 90px;
     object-fit: cover;
     border-radius: 8px;
     outline: 4px dashed rgb(109, 54, 29);
-    outline-offset: 10px;
-    margin-top: 0;
+    outline-offset: 8px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
 }
 
-#bookcontent .myphotos:nth-child(1) {
-    transform: rotate(-5deg);
+.leftpage .myphotos:nth-child(1) {
+    transform: rotate(-6deg);
+    margin-left: -10px;
+    margin-top: 0px;
 }
 
-#bookcontent .myphotos:nth-child(2) {
-    transform: rotate(3deg);
-    position: relative;
-    top: 150px;
-    left: -30px;
+.leftpage .myphotos:nth-child(2) {
+    transform: rotate(5deg);
+    margin-left: 20px;
+    margin-top: 0px;
 }
 
-#bookcontent .myphotos:nth-child(3) {
-    transform: rotate(-2deg);
-    position: relative;
-    top: 50px;
-    left: 100px;
+.leftpage .myphotos:nth-child(3) {
+    transform: rotate(-4deg);
+    margin-left: -5px;
+    margin-top: 0px;
+}
+
+.rightpage {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 30px;
+    font-family: 'Sterion';
+    color: rgb(109, 54, 29);
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+.rightpage h2 {
+    font-size: 1.1rem;
+    margin: 0 0 15px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.rightpage p {
+    font-size: 0.68rem;
+    line-height: 1.8;
+    text-align: left;
+    margin: 0 0 12px 0;
+}
+
+.rightpage p:last-child {
+    margin-bottom: 0;
 }
 
 #closebook {
@@ -380,6 +434,23 @@ body {
 
 #closebook.active {
     display: block;
+}
+
+#bush {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    transform: rotate(-8deg);
+    z-index: 3;
+    width: 400px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    cursor: url('photos/cursor.png'), auto;
+}
+
+#bush:hover {
+    transform: rotate(2deg) scale(1.3);filter: brightness(1.5) drop-shadow(0 0 10px rgba(91, 255, 50, 0.8));
 }
 
 #backdrop {
@@ -420,6 +491,30 @@ body {
     border-color: rgb(255, 255, 255);
     color: rgb(255, 255, 255);
     background-color: rgb(18, 47, 73);
+}
+
+#projectwindow {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 101;
+    display: none;
+    width: 850px;
+    height: 600px;
+    border-radius: 15px;
+    border: 5px solid rgb(109, 54, 29);
+    overflow: hidden;
+}
+
+#projectwindow.active {
+    display: block;
+}
+
+#projectframe {
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
 @media (max-width: 768px) {

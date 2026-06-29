@@ -64,6 +64,19 @@ document.addEventListener("keydown", (e) => {
             ease: "none" 
         });
     }
+    document.querySelectorAll(".flag, .campsvg, .book, .bonfiresvg").forEach(el => {
+        const obj = el.getBoundingClientRect();
+        const distance = Math.hypot(
+            rect.left - obj.left,
+            rect.top - obj.top
+        );
+        
+        if (distance < 100) {
+            el.style.filter = "brightness(1.8) drop-shadow(0 0 10px rgba(255, 200, 50, 0.9))";
+        } else {
+            el.style.filter = "";
+        }
+    });
 });
 
 document.getElementById("startbutton").addEventListener("click", () => {
@@ -107,4 +120,12 @@ document.getElementById("playgame").addEventListener("click", () => {
 document.getElementById("backtofire").addEventListener("click", () => {
     document.getElementById("game").style.display = "none";
     document.getElementById("chatting").style.display = "block";
+});
+
+document.getElementById("flag1").addEventListener("click", () => {
+    document.getElementById("projectwindow").classList.add("active");
+});
+
+document.getElementById("closeproject").addEventListener("click", () => {
+    document.getElementById("projectwindow").classList.remove("active");
 });
