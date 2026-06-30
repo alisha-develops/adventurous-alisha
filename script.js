@@ -122,9 +122,35 @@ document.getElementById("backtofire").addEventListener("click", () => {
     document.getElementById("chatting").style.display = "block";
 });
 
-document.querySelectorAll(".flag").forEach(flag => {
+const projects = {
+    project1: {
+        title: "simple harmonic motion",
+        desc: "i wanna pass physics",
+        link: "https://simple-harmonic-motion.vercel.app/"
+    },
+    project2: {
+        title: "nasa apod dashboard",
+        desc: "a very simple site fetching nasa's daily picture (or video) through their apod api.",
+        link: "https://alisha-develops.github.io/astronomy-daily-pics/"
+    },
+    project3: {
+        title: "macropad",
+        desc: "a custom macropad configuration preview",
+        link: "https://macropadpreview.vercel.app/"
+    }
+}
+
+document.querySelectorAll(".flag").forEach((flag, index) => {
     flag.addEventListener("click", () => {
-        document.getElementById("projectframe").src = flag.dataset.project;
+        const key = "project" + (index + 1);
+        document.getElementById("projecttitle").textContent = projects[key].title;
+        document.getElementById("projectdesc").textContent = projects[key].desc;
+        document.getElementById("viewproject").onclick = () => {
+            document.getElementById("projectframe").src = projects[key].link;
+            document.getElementById("projectframe").style.display = "block";
+            document.getElementById("projectinfo").style.display = "none";
+            document.getElementById("backtoinfo").style.display = "block";
+        };
         document.getElementById("projectwindow").style.display = "block";
         document.getElementById("projectbackdrop").classList.add("active");
     });
@@ -133,5 +159,18 @@ document.querySelectorAll(".flag").forEach(flag => {
 document.getElementById("closeproject").addEventListener("click", () => {
     document.getElementById("projectwindow").style.display = "none";
     document.getElementById("projectframe").src = "";
+    document.getElementById("projectframe").style.display = "none";
+    document.getElementById("projectinfo").style.display = "block";
     document.getElementById("projectbackdrop").classList.remove("active");
+});
+
+document.getElementById("backtoinfo").addEventListener("click", () => {
+    document.getElementById("projectframe").style.display = "none";
+    document.getElementById("projectframe").src = "";
+    document.getElementById("projectinfo").style.display = "block";
+    document.getElementById("backtoinfo").style.display = "none";
+});
+
+document.getElementById("proceedanyway").addEventListener("click", () => {
+    document.getElementById("mobilewarning").style.display = "none";
 });

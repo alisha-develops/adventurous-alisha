@@ -526,6 +526,38 @@ body {
     display: block;
 }
 
+#projectinfo {
+    padding: 40px;
+    color: rgb(51, 33, 5);
+    background: rgb(226, 200, 128);
+    height: 100%;
+    width: 100%;
+}
+
+#viewproject {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: rgb(109, 54, 29);
+    color: white;
+    border: 2px darkkhaki;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#backtoinfo {
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    padding: 8px 15px;
+    background: rgb(221, 185, 86);
+    color: rgb(68, 43, 10);
+    border: 2px dotted darkred;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
 #projectframe {
     width: 100%;
     height: 100%;
@@ -547,55 +579,212 @@ body {
     padding: 0;
 }
 
-@media (max-width: 768px) {
-    header {
-    height: 50vh;
-  }
-
-  #cloudsvg {
-    width: 100%;
-    height: 100%;
-  }
-  
-  .about {
-    height: auto;
-    min-height: 100vh;
-    padding: 40px 20px;
-  }
-
-  .projects {
-    height: auto;
-    min-height: 50vh;
-    padding: 20px;
-  }
-
-  #mountainsvg {
-    position: absolute;
-    bottom: 0;
+#mobilewarning {
+    display: none;
+    position: fixed;
+    top: 0;
     left: 0;
     width: 100%;
-    height: auto;
-  }
-
-  .photosline {
+    height: 100%;
+    background: rgb(93, 157, 216);
+    color: rgb(10, 37, 88);
+    z-index: 9999;
     flex-direction: column;
-  }
-  
-  .myphotos {
-    height: 150px;
-    width: 150px;
-  }
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+    font-family: 'Sterion';
+}
 
-  .intro {
-    top: 15%;
-    left: 5%;
-  }
+#proceedanyway {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: transparent;
+    border: 2px solid rgb(10, 37, 88);
+    color: rgb(10, 37, 88);
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Sterion';
+}
 
-  .intro h1 {
-    font-size: 1.2rem;
-  }
+@media (max-width: 600px) {
+    #mobilewarning {
+        display: flex;
+    }
+}
 
-  .intro h1:last-child {
-    font-size: 0.9rem;
-  }
+@media (max-width: 768px) {
+    header {
+        height: 50vh;
+    }
+
+    #cloudsvg {
+        width: 100%;
+        height: 100%;
+    }
+
+    #planesvg {
+        width: 90px;
+    }
+
+    #ch1 {
+        width: 40px;
+    }
+
+    .intro {
+        top: 15%;
+        left: 5%;
+    }
+
+    .intro h1 {
+        font-size: 1.2rem;
+    }
+
+    .intro h1:last-child {
+        font-size: 0.9rem;
+    }
+
+    #startbutton {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .projects {
+        height: auto;
+        min-height: auto;
+        padding: 20px;
+    }
+
+    #mountainsvg {
+    width: 100%;
+    height: auto;
+    transform: scaleX(1.3);
+    transform-origin: center center;
+    }
+
+    #flag1 {
+        bottom: 65%;
+        left: 15%;
+    }
+
+    #flag2 {
+        bottom: 72%;
+        left: 45%;
+    }
+
+    #flag3 {
+        bottom: 60%;
+        left: 78%;
+    }
+
+    .campsvg {
+        bottom: 45%;
+        left: 35%;
+    }
+
+    .flag {
+        width: 35px;
+    }
+
+    .forest {
+        height: auto;
+        min-height: 60vh;
+    }
+
+    .bonfiresvg {
+        width: 60px;
+    }
+
+    #bush {
+        left: -10%;
+        width: 250px;
+    }
+
+    .book {
+        bottom: 20%;
+        left: 55%;
+        z-index: 4;
+    }
+
+    #chatwindow {
+        width: 90%;
+        height: 80vh;
+        padding: 15px;
+    }
+
+    #openbook {
+        width: 90%;
+    }
+
+    #bookcontent {
+        width: 85%;
+        height: auto;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .leftpage,
+    .rightpage {
+        width: 100%;
+    }
+
+    .leftpage .myphotos {
+        height: 70px;
+        width: 70px;
+    }
+
+    .rightpage h2 {
+        font-size: 1rem;
+    }
+
+    .rightpage p {
+        font-size: 0.65rem;
+    }
+
+    #projectwindow {
+        width: 95%;
+        height: 80vh;
+    }
+
+    #projectinfo {
+        padding: 20px;
+    }
+
+    #closeproject {
+        width: 40px;
+        height: 55px;
+        right: 15px;
+    }
+
+    #game {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .intro h1 {
+        font-size: 1rem;
+    }
+
+    #chatwindow {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .reply {
+        font-size: 0.75rem;
+        padding: 6px 10px;
+    }
+
+    #bookcontent {
+        width: 90%;
+    }
+
+    .leftpage .myphotos {
+        height: 55px;
+        width: 55px;
+    }
 }
