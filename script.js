@@ -122,10 +122,16 @@ document.getElementById("backtofire").addEventListener("click", () => {
     document.getElementById("chatting").style.display = "block";
 });
 
-document.getElementById("flag1").addEventListener("click", () => {
-    document.getElementById("projectwindow").classList.add("active");
+document.querySelectorAll(".flag").forEach(flag => {
+    flag.addEventListener("click", () => {
+        document.getElementById("projectframe").src = flag.dataset.project;
+        document.getElementById("projectwindow").style.display = "block";
+        document.getElementById("projectbackdrop").classList.add("active");
+    });
 });
 
 document.getElementById("closeproject").addEventListener("click", () => {
-    document.getElementById("projectwindow").classList.remove("active");
+    document.getElementById("projectwindow").style.display = "none";
+    document.getElementById("projectframe").src = "";
+    document.getElementById("projectbackdrop").classList.remove("active");
 });
