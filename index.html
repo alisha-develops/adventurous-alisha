@@ -27,7 +27,7 @@
         <button id="proceedanyway">continue anyway, at my own risk</button>
     </div>
     <section class="projects">
-        <p>This is the next section</p>
+        <p>wooooahh!! that was fast! you should click on flags and camp below ;)</p>
 
         <img src="svgcode/mountain.svg" id="mountainsvg">
 
@@ -55,15 +55,18 @@
         <div id="chatwindow">
             <div id="chatting">
                 <button id="closechat">✕</button>
-                <div id="chat">
-                    <p id="chattext">hey traveller! welcome to my bonfire!</p>
+                <div id="sketchbook">
+                    <h2>leave a drawing by the campfire </h2>
+                    <p>draw me something cute!</p>
+
+                    <canvas id="drawingcanvas" width="400" height="300"></canvas>
+
+                    <div id="drawingcontrols">
+                        <button class="draw" id="clearcanvas">clear</button>
+                        <button class="draw" id="senddrawing">send drawing</button>
+                    </div>
                 </div>
-                <div id="responses">
-                    <button class="reply">tell me about yourself!</button>
-                    <button class="reply">what projects have you worked on?</button>
-                    <button class="reply">how can i reach you?</button>
-                </div>
-                <button id="playgame">wanna play a mini game?</button>
+                <button class="draw" id="playgame">wanna play a mini game?</button>
             </div>
             <div id="game"style="display:none; position:absolute; top:0; left:0; width:100%; height:100%;">
                 <button id="backtofire">← back to campfire</button>
