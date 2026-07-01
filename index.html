@@ -52,17 +52,41 @@
     <section class="forest">
         <p>This is the next section</p>
         <img src="photos/burning_fire-removebg-preview (1).png" class="bonfiresvg" id="closedfire">
-        <div id="chatwindow">
-            <div id="chatting">
-                <button id="closechat">✕</button>
+        <div id="campwindow">
+            <div id="drawing">
+                <button id="closedraw">✕</button>
                 <div id="sketchbook">
                     <h2>leave a drawing by the campfire </h2>
                     <p>draw me something cute!</p>
 
+                    <div id="toolbar">
+                        <button class ="tool" id="draw1"><img src="photos/pencil.png"></button>
+                        <button class="tool" id="erase"><img src="photos/eraser.png"></button>
+
+                        <input type="color" id="colorpicker" value="#000000">
+                        <button class="tool" id="choosebg">background color<input type="color" id="colorpicker" value="#000000"></button>
+
+                        <select id="brushsize">
+                            <option value="2">small</option>
+                            <option value="5" selected>medium</option>
+                            <option value="10">large</option>
+                        </select>
+
+                        <select id="chooseshape">
+                            <option value="2">□</option>
+                            <option value="5" selected>○</option>
+                            <option value="10">Δ</option>
+                            <option value="10">☆</option>
+                            <option value="10">♡</option>
+                        </select>
+
+                        <button class="tool" id="clearcanvas">clear</button>
+                    </div>
+
                     <canvas id="drawingcanvas" width="400" height="300"></canvas>
 
                     <div id="drawingcontrols">
-                        <button class="draw" id="clearcanvas">clear</button>
+                        <!-- <button class="draw" id="clearcanvas">clear</button> -->
                         <button class="draw" id="senddrawing">send drawing</button>
                     </div>
                 </div>

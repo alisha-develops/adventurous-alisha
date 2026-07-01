@@ -102,24 +102,24 @@ closedbook.addEventListener("click", () => {
     bookcontent.classList.remove("active");
 });
 
-const chatwindow = document.getElementById("chatwindow");
+const campwindow = document.getElementById("campwindow");
 
 document.getElementById("closedfire").addEventListener("click", () => {
-    chatwindow.classList.toggle("active");
+    campwindow.classList.toggle("active");
 });
 
-document.getElementById("closechat").addEventListener("click",() => {
-    chatwindow.classList.remove("active");
+document.getElementById("closedraw").addEventListener("click",() => {
+    campwindow.classList.remove("active");
 });
 
 document.getElementById("playgame").addEventListener("click", () => {
     document.getElementById("game").style.display = "block";
-    document.getElementById("chatting").style.display = "none";
+    document.getElementById("drawiing").style.display = "none";
 });
 
 document.getElementById("backtofire").addEventListener("click", () => {
     document.getElementById("game").style.display = "none";
-    document.getElementById("chatting").style.display = "block";
+    document.getElementById("drawing").style.display = "block";
 });
 
 const projects = {
