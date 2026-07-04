@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'Stone Breaker';
+    src: url('fonts/Stone\ Breaker.otf');
+    font-weight: normal;
+    font-style: normal;
+}
 * {
     margin: 0;
     padding: 0;
@@ -9,6 +15,34 @@ body {
     color: white;
     font-family: sans-serif;
     text-align: center;
-    padding: 20px;
-    cursor: url('photos/cursor.png'), pointer;
+    cursor: url('/photos/cursor.png'), pointer;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+header p{ 
+    font-family: 'Stone Breaker';
+    color: palevioletred;
+}
+
+main {
+    flex:1;
+    display: flex;
+}
+
+#game{
+    border: 1px solid palevioletred;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    display:flex;
+    z-index: 1;
 }
