@@ -59,7 +59,7 @@ class GameScene extends Phaser.Scene{
             font: "25px Stone Breaker",
             fill: "#743603",
         });
-        this.timedEvent = this.time.delayedCall(3000, this.gameOver,[], this)
+        this.timedEvent = this.time.delayedCall(15000, this.gameOver,[], this)
 
         this.emitter= this.add.particles(0,0, "money", {
             speed:100,
@@ -101,7 +101,14 @@ class GameScene extends Phaser.Scene{
         this.textScore.setText(`score" ${this.points}`)
     }
     gameOver(){
-        console.log("game over!")
+        this.sys.game.destroy(true);
+        const endGame = document.getElementById("endgame");
+        const winLose = document.getElementById("gameWinLoseSpan");
+        const score = document.getElementById("gameEndScoreSpan");
+        
+        endGame.classList.add("active");
+        score.textContent = this.points;
+        winLose.textContent = this.points >= 10 ? " won! " : " lost! ";
     }
 }
 
@@ -119,5 +126,16 @@ const config = {
         }
     }
 }
+let game;
 
-const game = new Phaser.Game(config);
+function startGame() {
+    document.getElementById("startgame").classList.remove("active");
+    game = new Phaser.Game(config);
+}
+
+document.getElementById("startapple").addEventListener("click", () => {
+    startGame();
+});
+document.getElementById("restartbtn").addEventListener("click", () => {
+    location.reload();
+});

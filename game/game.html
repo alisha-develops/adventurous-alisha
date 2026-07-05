@@ -8,16 +8,29 @@
     <title>apple game</title>
 </head>
 <body>
-    <header>
+    <!-- <header>
         <p>woah! did alisha send you here?</p>
-    </header>
+    </header> -->
     <main>
         <div id="game"></div>
-        <!-- <canvas id="gamecanvas"></canvas> -->
+        <div id="startgame" class="gameUI active">
+            <h1>woah! did alisha send you here?</h1>
+            <p>you have 15 seconds to catch the apples!</p>
+            <p>if you catch more than 10 apples you win!</p>
+            <p>if you catch less than 10 apples you lose!</p>
+            <h2>use ← and → to move basket</h2>
+            <button id="startapple">start</button>
+        </div>
+        <div id="endgame" class="gameUI">
+            <p>game over!</p>
+            <h1>you<span id="gameWinLoseSpan"></span></h1>
+            <h1>final score: <span id="gameEndScoreSpan"></span></h1>
+            <button id="restartbtn">restart</button>
+        </div>
     </main>
-    <footer>
+    <!-- <footer>
         <p>use ← and → to move basket</p>
-    </footer>
+    </footer> -->
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.90.0/phaser.min.js" integrity="sha512-/tJYyDCrI7hnHWp45P189aOwPa6lTREosRhlxEIqx8skB4A3a3rD3iz4o335SJd4sORqjVHw5y1S2hq4hciwLw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="game.js"></script>

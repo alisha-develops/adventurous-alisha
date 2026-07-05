@@ -170,4 +170,7 @@ document.getElementById("bush").addEventListener("click", () => {
 document.getElementById("closegame").addEventListener("click", () => {
     document.getElementById("game").style.display = "none";
     document.getElementById("gamebackdrop").classList.remove("active");
+    setTimeout(() => {
+        document.getElementById("gameframe").focus();
+    }, 100);
 });

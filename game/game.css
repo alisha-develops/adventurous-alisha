@@ -12,11 +12,11 @@ body {
     overflow: hidden;
 }
 
-header, footer {
+/* header, footer {
     padding: 8px;
-    /* background: rgb(255, 182, 193); */
-    /* border-bottom: 3px solid palevioletred;
-    border-top: 3px solid palevioletred; */
+    background: rgb(255, 182, 193); 
+    border-bottom: 3px solid palevioletred;
+    border-top: 3px solid palevioletred;
     text-align: center;
     flex-shrink: 0;
 }
@@ -26,13 +26,14 @@ footer p {
     font-family: 'Stone Breaker';
     color: rgb(124, 0, 87);
     font-size: 1rem;
-}
+} */
 
 main {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 #game {
@@ -40,4 +41,44 @@ main {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(219, 112, 147, 0.5);
+    position: relative;
+}
+
+.gameUI {
+    font-family: 'Stone Breaker';
+    color:rgb(165, 19, 43);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(157, 248, 104, 0.95);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    z-index: 10;
+}
+
+.gameUI.active {
+    display: flex;
+}
+
+#startapple, #restartbtn {
+    font-family: 'Stone Breaker';
+    color: rgb(165, 19, 43);
+    background: transparent;
+    border: 2px solid rgb(165, 19, 43);
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 10px;
+}
+
+#startapple:hover, #restartbtn:hover {
+    background: rgb(165, 19, 43);
+    color: white;
 }
