@@ -1,3 +1,12 @@
+gsap.registerPlugin(ScrollToPlugin);
+
+function lockScroll(e) {
+    e.preventDefault();
+}
+
+window.addEventListener("wheel", lockScroll, { passive: false });
+window.addEventListener("touchmove", lockScroll, { passive: false });
+
 const tl = gsap.timeline({paused: true});
 
 tl.to("#planesvg", { 
@@ -8,12 +17,10 @@ tl.to("#planesvg", {
 .call(() => {
     document.getElementById("planesvg").src = "svgcode/planedoor.svg";
 })
-
 .to("#ch1", { 
     opacity: 1, 
     duration: 0.3 
 }, "+=0.5")
-
 .to("#ch1", { 
     y: 400,
     x: -100,
@@ -21,14 +28,17 @@ tl.to("#planesvg", {
     duration: 6, 
     ease: "power1.out",
 })
+.to(document.documentElement, {
+    scrollTop: document.querySelector(".projects").offsetTop,
+    duration: 6,
+    ease: "power1.out"
+}, "<")
 .call(() => {
-    gsap.set("#ch1", { 
-        rotation: 15 
-    });
-})
-.call(() => {
-    document.body.style.overflow = "scroll"; 
-}, null, "+=2");
+    gsap.set("#ch1", { rotation: 15 });
+    window.removeEventListener("wheel", lockScroll);
+    window.removeEventListener("touchmove", lockScroll);
+    document.body.style.overflow = "scroll";
+});
 
 document.addEventListener("keydown", (e) => {
     const ch1 = document.getElementById("ch1");
