@@ -34,13 +34,22 @@ tl.to("#planesvg", {
     ease: "power1.out"
 }, "<")
 .call(() => {
-    gsap.set("#ch1", { rotation: 15 });
+    gsap.set("#ch1", { 
+        rotation: 15 
+    });
     window.removeEventListener("wheel", lockScroll);
     window.removeEventListener("touchmove", lockScroll);
     document.body.style.overflow = "scroll";
+    document.getElementById("scrollarrow").classList.add("active");
+    document.getElementById("wasdmsg").classList.add("active");
+});
+
+window.addEventListener("scroll", () => {
+    document.getElementById("scrollarrow").classList.remove("active");
 });
 
 document.addEventListener("keydown", (e) => {
+    document.getElementById("wasdmsg").classList.remove("active");
     const ch1 = document.getElementById("ch1");
     const rect = ch1.getBoundingClientRect();
     
@@ -89,6 +98,14 @@ document.addEventListener("keydown", (e) => {
     });
 });
 
+
+function hideCharacter() {
+    document.getElementById("ch1").style.visibility = "hidden";
+}
+function showCharacter() {
+    document.getElementById("ch1").style.visibility = "visible";
+}
+
 document.getElementById("startbutton").addEventListener("click", () => {
     document.getElementById("startbutton").style.display = "none";
     tl.play();
@@ -114,10 +131,12 @@ const campwindow = document.getElementById("campwindow");
 document.getElementById("closedfire").addEventListener("click", () => {
     campwindow.classList.toggle("active");
     initDrawing();
+    hideCharacter();
 });
 
 document.getElementById("closedraw").addEventListener("click",() => {
     campwindow.classList.remove("active");
+    showCharacter();
 });
 const projects = {
     project1: {
@@ -150,6 +169,7 @@ document.querySelectorAll(".flag").forEach((flag, index) => {
         };
         document.getElementById("projectwindow").style.display = "block";
         document.getElementById("projectbackdrop").classList.add("active");
+        hideCharacter();
     });
 });
 
@@ -159,6 +179,7 @@ document.getElementById("closeproject").addEventListener("click", () => {
     document.getElementById("projectframe").style.display = "none";
     document.getElementById("projectinfo").style.display = "block";
     document.getElementById("projectbackdrop").classList.remove("active");
+    showCharacter();
 });
 
 document.getElementById("backtoinfo").addEventListener("click", () => {
@@ -175,12 +196,11 @@ document.getElementById("proceedanyway").addEventListener("click", () => {
 document.getElementById("bush").addEventListener("click", () => {
     document.getElementById("game").style.display = "block";
     document.getElementById("gamebackdrop").classList.add("active");
+    hideCharacter();
 });
 
 document.getElementById("closegame").addEventListener("click", () => {
     document.getElementById("game").style.display = "none";
     document.getElementById("gamebackdrop").classList.remove("active");
-    setTimeout(() => {
-        document.getElementById("gameframe").focus();
-    }, 100);
+    showCharacter();
 });

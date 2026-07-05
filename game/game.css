@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Stone Breaker';
+    src: url('/fonts/Stone\ Breaker.otf');
+    font-weight: normal;
+    font-style: normal;
+} 
+
 * {
     margin: 0;
     padding: 0;
@@ -87,7 +94,7 @@ main {
 
 #touchcontrols {
     display: none;
-    gap: 20px;
+    gap: 60px;
     justify-content: center;
     margin-top: 10px;
 }
