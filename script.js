@@ -86,42 +86,29 @@ document.getElementById("startbutton").addEventListener("click", () => {
 const openbook = document.getElementById("openbook");
 const closedbook = document.getElementById("closebook");
 const backdrop = document.getElementById("backdrop");
-const bookcontent = document.getElementById("bookcontent");
 
 document.getElementById("closedbook").addEventListener("click", () => {
     openbook.classList.toggle("active");
     closedbook.classList.toggle("active");
     backdrop.classList.toggle("active");
-    bookcontent.classList.toggle("active");
 });
 
 closedbook.addEventListener("click", () => {
     openbook.classList.remove("active");
     closedbook.classList.remove("active");
     backdrop.classList.remove("active");
-    bookcontent.classList.remove("active");
 });
 
 const campwindow = document.getElementById("campwindow");
 
 document.getElementById("closedfire").addEventListener("click", () => {
     campwindow.classList.toggle("active");
+    initDrawing();
 });
 
 document.getElementById("closedraw").addEventListener("click",() => {
     campwindow.classList.remove("active");
 });
-
-document.getElementById("playgame").addEventListener("click", () => {
-    document.getElementById("game").style.display = "block";
-    document.getElementById("drawiing").style.display = "none";
-});
-
-document.getElementById("backtofire").addEventListener("click", () => {
-    document.getElementById("game").style.display = "none";
-    document.getElementById("drawing").style.display = "block";
-});
-
 const projects = {
     project1: {
         title: "simple harmonic motion",
@@ -175,78 +162,12 @@ document.getElementById("proceedanyway").addEventListener("click", () => {
     document.getElementById("mobilewarning").style.display = "none";
 });
 
-const canvas= document.getElementById("drawingcanvas");
-const ctx = canvas.getContext("2d");
-let drawing = false;
-let currentTool = "draw";
-let currentColor = "#000000";
-let currentSize = 5;
-let currentShape = "none";
-let startX, startY;
-
-function getPos(e) {
-    const rect = canvas.getBoundingClientRect();
-    const scaleX = canvas.width / rect.width;
-    const scaleY = canvas.height / rect.height;
-    return {
-        x: (e.client - rect.left) * scaleX,
-        y: (e.client - rect.top) * scaleY
-    };
-
-}
-document.getElementById("draw1").addEventListener("click", () => currentTool = "draw");
-document.getElementById("erase").addEventListener("click", () => currentTool = "erase");
-document.getElementById("colorpicker").addEventListener("input", (e) => currentColor = e.target.value);
-document.getElementById("bgcolorpicker").addEventListener("input", (e) => {
-    ctx.fillStyle= e.target.value;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+document.getElementById("bush").addEventListener("click", () => {
+    document.getElementById("game").style.display = "block";
+    document.getElementById("gamebackdrop").classList.add("active");
 });
 
-document.getElementById('brushsize').addEventListener("change", (e) => currentSize = parseInt(e.target.value));
-document.getElementById("bgcolorpicker").addEventListener("input", (e) => {
-    ctx.fillStyle = e.target.value;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+document.getElementById("closegame").addEventListener("click", () => {
+    document.getElementById("game").style.display = "none";
+    document.getElementById("gamebackdrop").classList.remove("active");
 });
-document.getElementById("brushsize").addEventListener("change", (e) => currentSize = parseInt(e.target.value));
-document.getElementById("chooseshape").addEventListener("change", (e)=> {
-    currentShape = e.target.value;
-    currentTool = currentShape === "none" ? "draw" : "shape";
-});
-document.getElementById("clearcanvas").addEventListener("click", () => ctx.clearRect(0, 0, canvas.width, canvas.height));
-canvas.addEventListener("mousedown", (e) => {
-    drawing = true;
-    const pos = getPos(e);
-    startX = pos.x;
-    startY = pos.y;
-    ctx.beginPath();
-    ctx.moveTo(pos.x, pos.y);
-});
-canvas.addEventListener("mousemove", (e) => {
-    if (!drawing)return;
-    const pos = getPos(e);
-    if(currentTool==="shape") {
-        const pos = getPos(e);
-        ctx.strokeStyle = currentColor;
-        ctx.lineWidth = currentSize;
-        ctx.beginPath();
-        if (currentShape === "□") {
-            ctx.strokeRect(startX, startY, pos.x - startX, pos.y - startY);
-        } else if (currentShape === "○") {
-            ctx.arc(startX, startY, Math.abs(pos.x - startX), 0, Math.PI * 2);
-            ctx.stroke();
-        } else if (currentShape === "Δ") {
-            ctx.moveTo(startX, startY);
-            ctx.lineTo(pos.x, pos.y);
-            ctx.lineTo(startX - (pos.x - startX), pos.y);
-            ctx.closePath();
-            ctx.stroke();
-        }
-    }
-    drawing= false;
-    ctx.beginPath();
-});
-canvas.addEventListener("mouseleave", ()=> {
-    drawing= false;
-    ctx.beginPath();
-});
-canvas.addEventListener

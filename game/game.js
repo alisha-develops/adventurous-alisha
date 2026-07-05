@@ -13,15 +13,30 @@ class GameScene extends Phaser.Scene{
         this.playerSpeed = speedDown + 50;
         this.target;
         this.points = 0;
-        this.textScore
+        this.textScore;
+        this.textTime;
+        this.timedEvent;
+        this.remainingTime;
+        this.coinMusic;
+        this.bgMusic;
+        this.emitter
     }
 
     preload(){
-        this.load.image("bg", "assets/bg.png")
-        this.load.image("basket", "assets/basket.png")
-        this.load.image("apple", "assets/apple.png")
+        this.load.image("bg", "assets/bg.png");
+        this.load.image("basket", "assets/basket.png");
+        this.load.image("apple", "assets/apple.png");
+        this.load.image("money", "assets/money.png");
+        this.load.audio("bgMusic", "assets/bgMusic.mp3");
+        this.load.audio("coin", "assets/coin.mp3");
     }
     create(){
+        this.coinMusic = this.sound.add("coin")
+        this.bgMusic = this.sound.add("bgMusic")
+        this.bgMusic.play()
+        this.bgMusic.stop()
+
+
         this.add.image(0,0,"bg").setOrigin(0,0)
         this.player = this.physics.add.image(0,sizes.height-100, "basket").setOrigin(0,0)
         this.player.setImmovable(true);
@@ -40,8 +55,26 @@ class GameScene extends Phaser.Scene{
             font: "25px Stone Breaker",
             fill: "#006400",
         });
+        this.textTime = this.add.text(10, 10, "remaining time: 00", {
+            font: "25px Stone Breaker",
+            fill: "#743603",
+        });
+        this.timedEvent = this.time.delayedCall(3000, this.gameOver,[], this)
+
+        this.emitter= this.add.particles(0,0, "money", {
+            speed:100,
+            gravityY: speedDown-200,
+            scale:0.04,
+            duration:100,
+            emitting:false
+        });
+        this.emitter.startFollow(this.player, this.player.width/2, this.player.height / 2, true);
     }
     update(){
+        this.remainingTime=this.timedEvent.getRemainingSeconds()
+        this.textTime.setText(`remaining time: ${Math.round(this.remainingTime).toString()}`)
+        
+
         if (this.target.y >= sizes.height){
             this.target.setY(0);
             this.target.setX(this.getRandomX())
@@ -60,9 +93,15 @@ class GameScene extends Phaser.Scene{
         return Math.floor(Math.random() * 480);
     }
     targetHit() {
+        this.coinMusic.play()
+        this.emitter.start()
         this.target.setY(0);
         this.target.setX(this.getRandomX());
         this.points++;
+        this.textScore.setText(`score" ${this.points}`)
+    }
+    gameOver(){
+        console.log("game over!")
     }
 }
 
@@ -70,6 +109,7 @@ const config = {
     type: Phaser.AUTO,
     width: sizes.width,
     height: sizes.height,
+    parent: "game",
     scene: [GameScene],
     physics: {
         default: "arcade",

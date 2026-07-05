@@ -280,21 +280,46 @@ input[type="color"] {
 }
 
 #game {
-    position: absolute;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 101;
+    display: none;
+    width: 850px;
+    height: 600px;
+    border-radius: 15px;
+    border: 5px solid rgb(109, 54, 29);
+    overflow: hidden;
+}
+#gamebackdrop {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 100;
+    display: none;
 }
 
-#gameframe {
-    width: 100%;
-    height: 100%;
-    border: none;
+#gamebackdrop.active {
     display: block;
+}
+
+#closegame {
     position: absolute;
     top: 0;
-    left: 0;
+    right: 30px;
+    width: 50px;
+    height: 70px;
+    background-color: rgb(180, 139, 49);
+    border: none;
+    color: rgb(36, 32, 2);
+    font-size: 1.2rem;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+    z-index: 1000;
+    padding: 0;
 }
 
 #backtofire {

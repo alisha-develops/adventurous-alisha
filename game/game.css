@@ -1,48 +1,43 @@
-@font-face {
-    font-family: 'Stone Breaker';
-    src: url('/fonts/Stone\ Breaker.otf');
-    font-weight: normal;
-    font-style: normal;
-}
 * {
     margin: 0;
     padding: 0;
-    box-sizing:border-box;
+    box-sizing: border-box;
 }
 
 body {
     background: #fce094;
-    color: white;
-    font-family: sans-serif;
-    text-align: center;
-    cursor: url('/photos/cursor.png'), pointer;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-header {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 20px;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
 }
 
-header p{ 
+header, footer {
+    padding: 8px;
+    /* background: rgb(255, 182, 193); */
+    /* border-bottom: 3px solid palevioletred;
+    border-top: 3px solid palevioletred; */
+    text-align: center;
+    flex-shrink: 0;
+}
+
+header p,
+footer p {
     font-family: 'Stone Breaker';
-    color: palevioletred;
+    color: rgb(124, 0, 87);
+    font-size: 1rem;
 }
 
 main {
-    flex:1;
+    flex: 1;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#game{
-    border: 1px solid palevioletred;
-    position: absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%);
-    display:flex;
-    z-index: 1;
+#game {
+    border: 6px solid palevioletred;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(219, 112, 147, 0.5);
 }
