@@ -26,7 +26,7 @@ this is the most packed section. three things to find:
   <tr>
     <td align="center" style="padding: 15px; background-color: #274b32; border: 1px solid #30363d; border-radius: 6px;">
       <p>the bonfire: click it and a drawing canvas opens. leave me something cute. there's a pencil, eraser, color picker, brush sizes, and shapes. when you're done you can send it directly to my email.</p>
-      <img src="https://cdn.hackclub.com/019f330b-39c7-71b6-b100-7ea98d2ca6ee/2026-07-05%20(12).png" alt="stage 1" width="100%">
+      <img src="https://cdn.hackclub.com/019f3438-118b-7edd-ac52-fe58bd19fabe/2026-07-05%20(12).png" alt="stage 1" width="100%">
     </td>
     <td align="center" style="padding: 15px; background-color: #274b32; border: 1px solid #30363d; border-radius: 6px;">
       <p>the book: tilted slightly on the grass. click it and it opens like a real book. i have attached my photos there so it previews like an album of me!</p>

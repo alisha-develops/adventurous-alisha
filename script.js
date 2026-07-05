@@ -204,3 +204,29 @@ document.getElementById("closegame").addEventListener("click", () => {
     document.getElementById("gamebackdrop").classList.remove("active");
     showCharacter();
 });
+
+document.querySelector(".campsvg").addEventListener("click", (e) => {
+    e.preventDefault();
+    document.getElementById("campinfo").classList.add("active");
+    document.getElementById("campbackdrop").classList.add("active");
+    hideCharacter();
+    updateTime();
+});
+
+document.getElementById("closecamp").addEventListener("click", () => {
+    document.getElementById("campinfo").classList.remove("active");
+    document.getElementById("campbackdrop").classList.remove("active");
+    showCharacter();
+});
+
+function updateTime() {
+    const time = new Date().toLocaleTimeString("en-US", {
+        timeZone: "Asia/Karachi",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
+    });
+    document.getElementById("alishttime").textContent = time;
+}
+
+setInterval(updateTime, 1000);
