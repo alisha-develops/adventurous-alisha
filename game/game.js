@@ -1,3 +1,6 @@
+let leftPressed = false;
+let rightPressed = false;
+
 const sizes= {
     width: 500,
     height: 500,
@@ -71,22 +74,26 @@ class GameScene extends Phaser.Scene{
         this.emitter.startFollow(this.player, this.player.width/2, this.player.height / 2, true);
     }
     update(){
-        this.remainingTime=this.timedEvent.getRemainingSeconds()
-        this.textTime.setText(`remaining time: ${Math.round(this.remainingTime).toString()}`)
-        
+        this.remainingTime = this.timedEvent.getRemainingSeconds();
+        this.textTime.setText(`remaining time: ${Math.round(this.remainingTime)}`);
 
         if (this.target.y >= sizes.height){
             this.target.setY(0);
-            this.target.setX(this.getRandomX())
+            this.target.setX(this.getRandomX());
         }
-        const {left,right} = this.cursor
+
+        const {left, right} = this.cursor;
 
         if (left.isDown) {
             this.player.setVelocityX(-this.playerSpeed);
-        } else if (right.isDown){
-            this.player.setVelocityX(this.playerSpeed);
-        } else{
-            this.player.setVelocityX(0);
+        } else if (leftPressed) {
+            this.player.setVelocityX(-this.playerSpeed);
+        } else if (right.isDown) {
+        this.player.setVelocityX(this.playerSpeed);
+        } else if (rightPressed) {
+        this.player.setVelocityX(this.playerSpeed);
+        } else {
+        this.player.setVelocityX(0);
         }
     }
     getRandomX() {
@@ -101,6 +108,10 @@ class GameScene extends Phaser.Scene{
         this.textScore.setText(`score" ${this.points}`)
     }
     gameOver(){
+        this.sys.game.destroy(true);
+        document.getElementById("touchcontrols").style.display = "none";
+        document.getElementById("endgame").classList.add("active");
+
         this.sys.game.destroy(true);
         const endGame = document.getElementById("endgame");
         const winLose = document.getElementById("gameWinLoseSpan");
@@ -130,6 +141,7 @@ let game;
 
 function startGame() {
     document.getElementById("startgame").classList.remove("active");
+    document.getElementById("touchcontrols").style.display = "flex";
     game = new Phaser.Game(config);
 }
 
@@ -138,4 +150,21 @@ document.getElementById("startapple").addEventListener("click", () => {
 });
 document.getElementById("restartbtn").addEventListener("click", () => {
     location.reload();
+});
+
+['mousedown', 'touchstart'].forEach(evt => {
+    document.getElementById("leftbtn").addEventListener(evt, (e) => {
+        e.preventDefault();
+        leftPressed = true;
+    }, { passive: false });
+    
+    document.getElementById("rightbtn").addEventListener(evt, (e) => {
+        e.preventDefault();
+        rightPressed = true;
+    }, { passive: false });
+});
+
+['mouseup', 'touchend'].forEach(evt => {
+    document.getElementById("leftbtn").addEventListener(evt, () => leftPressed = false);
+    document.getElementById("rightbtn").addEventListener(evt, () => rightPressed = false);
 });

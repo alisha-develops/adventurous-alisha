@@ -1,6 +1,51 @@
-my new personal site! (more like my playground) 
-
 [jump to hackatime glitch info](#a-must-read-for-horizon-reviewers-hackatime-glitch-info)
+
+## my new personal site! (more like my playground) 
+this is not my typical professional portfolio, this is my unprofessional personal site! i wanted people to do something when they visited my site, not just scroll and skim. so i built it like a tiny adventure game. you start in the sky, land on mountains, walk into a forest, and find things along the way. every section has something to click, something to open, something to play.
+
+### adventure...?
+yes, adventure! a plane flies in from the left. the door opens. a character jumps out and floats down through the clouds onto the mountain peaks below. you watch it happen, then the page unlocks and you can take over.
+<table>
+  <tr>
+    <td align="center" style="padding: 15px; background-color: #323438; border: 1px solid #30363d; border-radius: 6px;">
+      <img src="https://cdn.hackclub.com/019f32fc-c997-7e9b-8af2-37b08482b7d8/2026-07-05%20(6).png" alt="stage 1" width="100%">
+    </td>
+    <td align="center" style="padding: 15px; background-color: #323438; border: 1px solid #30363d; border-radius: 6px;">
+      <img src="https://cdn.hackclub.com/019f32fd-bf1e-7e64-9324-0c2bf7a687c3/2026-07-05%20(7).png" alt="stage 2" width="100%">
+    </td>
+    <td align="center" style="padding: 15px; background-color: #323438; border: 1px solid #30363d; border-radius: 6px;">
+      <img src="https://cdn.hackclub.com/019f32fd-1c36-7948-8385-2491c16d9068/2026-07-05%20(8).png" alt="stage 3" width="100%">
+    </td>
+  </tr>
+</table>
+the character is controllable with wasd - and as you walk near the flags or the camp, they glow like something's there. three flags sit on three different peaks. click one and a window opens right there on the page. it shows you a little about the project first, then gives you the option to view it live inside an iframe.
+
+### forest!
+this is the most packed section. three things to find:
+<table>
+  <tr>
+    <td align="center" style="padding: 15px; background-color: #274b32; border: 1px solid #30363d; border-radius: 6px;">
+      <p>the bonfire: click it and a drawing canvas opens. leave me something cute. there's a pencil, eraser, color picker, brush sizes, and shapes. when you're done you can send it directly to my email.</p>
+      <img src="https://cdn.hackclub.com/019f330b-39c7-71b6-b100-7ea98d2ca6ee/2026-07-05%20(12).png" alt="stage 1" width="100%">
+    </td>
+    <td align="center" style="padding: 15px; background-color: #274b32; border: 1px solid #30363d; border-radius: 6px;">
+      <p>the book: tilted slightly on the grass. click it and it opens like a real book. i have attached my photos there so it previews like an album of me!</p>
+      <img src="https://cdn.hackclub.com/019f330c-f92a-79fe-a350-2bf1801eee09/2026-07-05%20(13).png" alt="stage 2" width="100%">
+    </td>
+    <td align="center" style="padding: 15px; background-color: #274b32; border: 1px solid #30363d; border-radius: 6px;">
+      <p>the bush: has a mini game. click it and apple catcher loads inside a styled window. catch 10 apples in 15 seconds. there are in canvas buttons for mobile players.</p>
+      <img src="https://cdn.hackclub.com/019f3308-d327-744e-aad3-4b10a2abda79/2026-07-05%20(5).png" alt="stage 3" width="100%">
+    </td>
+  </tr>
+</table>
+
+## cdn over local installation
+i used gsap in animating the character and phaser for making the game. for a project this size, cdn is just the simpler choice. i personally did not want to install it locally. grab your cdn links directly from the library sites:
+
+- gsap: [cdnjs.com](https://cdnjs.com/libraries/gsap)
+- phaser: [cdnjs.com](https://cdnjs.com/libraries/phaser)
+
+drop them in your html before your own scripts and you're done.
 
 ## built-in game documentation!
 

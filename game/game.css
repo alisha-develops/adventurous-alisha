@@ -84,3 +84,61 @@ main {
     background: rgb(165, 19, 43);
     color: white;
 }
+
+#touchcontrols {
+    display: none;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+
+#leftbtn, #rightbtn {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+    background: transparent;
+    color: rgb(165, 19, 43);
+    border: 5px dotted rgb(165, 19, 43);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.arrows {
+    background:rgb(165, 19, 43);
+    color: rgb(255, 225, 230);
+    border: 5px dotted rgb(165, 19, 43);
+    cursor: url('/photos/cursor.png'), auto;
+}
+
+@media (max-width: 768px) {
+    #touchcontrols {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin-top: 10px;
+        display: none;
+    }
+    #game {
+        width: 95vw !important;
+        height: auto !important;
+    }
+    
+    canvas {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .gameUI h1 {
+        font-size: 1.2rem;
+    }
+
+    .gameUI p {
+        font-size: 0.75rem;
+    }
+
+    #startapple, #restartbtn {
+        padding: 8px 18px;
+        font-size: 0.85rem;
+    }
+}
