@@ -3,6 +3,11 @@
 ## my new personal site! (more like my playground) 
 this is not my typical professional portfolio, this is my unprofessional personal site! i wanted people to do something when they visited my site, not just scroll and skim. so i built it like a tiny adventure game. you start in the sky, land on mountains, walk into a forest, and find things along the way. every section has something to click, something to open, something to play.
 
+> **ai usage:** used claude for some css part like flexbox/grid layouts, for close button of book and for fixing some logic in drawing.js. github copilot appearing in hackatime is a mistake - hackatime is pulling random files from my computer and logging them. i did not use copilot for this one.
+>
+> **time spent:** total tracked time is 29h 38m 11s, started june 17. hackatime shows some inconsistencies but the start date is confirmed. pls see [hackatime glitch info](#a-must-read-for-horizon-reviewers-hackatime-glitch-info)!
+>
+
 ### adventure...?
 yes, adventure! a plane flies in from the left. the door opens. a character jumps out and floats down through the clouds onto the mountain peaks below. you watch it happen, then the page unlocks and you can take over.
 <table>
@@ -39,6 +44,12 @@ this is the most packed section. three things to find:
   </tr>
 </table>
 
+## art and assets
+
+everything you see on this site - the clouds, mountains, forest, character, plane, opened book, camp, bush  was hand drawn by me on figma and exported as svg. yes, figma. not the most conventional drawing tool but it worked and im genuinely proud of how it turned out.
+
+the only assets not drawn by me are the pink flags, campfire png and close pirate book which were taken from google images.
+
 ## cdn over local installation
 i used gsap in animating the character and phaser for making the game. for a project this size, cdn is just the simpler choice. i personally did not want to install it locally. grab your cdn links directly from the library sites:
 
@@ -46,6 +57,10 @@ i used gsap in animating the character and phaser for making the game. for a pro
 - phaser: [cdnjs.com](https://cdnjs.com/libraries/phaser)
 
 drop them in your html before your own scripts and you're done.
+
+> ## known issues
+>
+> the site is a bit laggy in some areas. heavy svgs, gsap animation, and multiple iframes all running together will do that. it works, just not perfectly optimized yet. performance improvements are on the to-do list.
 
 ## built-in game documentation!
 
@@ -77,27 +92,27 @@ the game itself is simple: apples fall from the top of the screen and you move a
 
 ## a must read for horizon reviewer(s)!!! (hackatime glitch info)
 
-so my hackatime looks a bit messy. it's showing like 13 hours and claims the project has been active for 15 days, but **2 of those hours are completely inflated because of a local cache glitch around june 19-20** that randomly pulled in 95+ ghost files from other projects on my pc (including a vibecoded project i worked on the other day name "cv_tool_vercel" which is why you see a lot of copilot(since it was used in this vibecoded project)).
+so my hackatime looks a bit messy. it's showing like 31h 20m 23s and claims the project has been active for 27 days, but **~2 of those hours are completely inflated because of a local cache glitch around june 19-20** that randomly pulled in 95+ ghost files from other projects on my pc (including a vibecoded project i worked on the other day named "cv_tool_vercel" which is why you see a lot of copilot(since it was used in this vibecoded project)).
 
-anyways, i actually started this project on **june 17**, and the true manual dev time should be **~11 hours**. i talked to fs about it and they gave me the green light to just track normally and note it down here. if you check the time spent per file on the backend, you'll easily see which files don't belong to this repo. 
+anyways, i actually started this project on **june 17**, and the true manual dev time should be **~29h 38m 11s**. i talked to fs about it and they gave me the green light to just track normally and note it down here. if you check the time spent per file on the backend, you'll easily see which files don't belong to this repo. 
 
-i took some screenshots for full transparency so you can see what's actually happening:
+i took some screenshots that might help:
 <table>
   <tr>
-    <th width="65%">1. actual time filtered (june 17 - june 24)</th>
+    <th width="65%">1. actual time filtered (june 17 - july 6)</th>
     <th width="35%">2. actual vs code file tree</th>
   </tr>
   <tr>
     <td valign="top">
       <p>here is the filtered view showing the actual hours logged during my real dev window:</p>
-      <img src="https://cdn.hackclub.com/019ef9fb-aba7-7754-8b32-bea0206c7622/time%20spent%20on%20adv%20alisha%20from%2017%20june%20to%2024%20june.png" alt="hackatime logs" width="100%">
+      <img src="https://cdn.hackclub.com/019f3632-4340-76d1-931f-c062075334f9/2026-07-06%20(4).png" alt="hackatime logs" width="100%">
     </td>
     <td valign="top">
       <p>what my folder actually looks like (definitely not 95+ files lol):</p>
       <details>
         <summary style="cursor: pointer; color: #38bdf8; font-weight: bold;">click to expand file tree</summary>
         <div style="margin-top: 10px;">
-          <img src="https://cdn.hackclub.com/019ef9fb-e265-7748-9675-db5ac5b8be67/file%20structure%20for%20adv-alisha.png" alt="vs code structure" width="100%">
+          <img src="https://cdn.hackclub.com/019f3633-9bce-7d6c-8e3f-75fd06fcf590/2026-07-06%20(5).png" alt="vs code structure" width="100%">
         </div>
       </details>
     </td>
