@@ -825,6 +825,15 @@ input[type="color"] {
     font-family: 'Stone Breaker';
 }
 
+@keyframes twinkle {
+    0% { opacity: 0.2; }
+    100% { opacity: 1; }
+}
+
+#startbutton.night:hover {
+    background-color: rgb(94, 94, 95);
+}
+
 @media (max-width: 600px) {
     #mobilewarning {
         display: flex;
@@ -1022,3 +1031,4 @@ input[type="color"] {
         width: 55px;
     }
 }
+

@@ -145,9 +145,9 @@ const projects = {
         link: "https://simple-harmonic-motion.vercel.app/"
     },
     project2: {
-        title: "nasa apod dashboard",
-        desc: "a very simple site fetching nasa's daily picture (or video) through their apod api.",
-        link: "https://alisha-develops.github.io/astronomy-daily-pics/"
+        title: "vision board",
+        desc: "a web based editor for your vision/mood board!",
+        link: "https://alisha-develops.github.io/vision-board/"
     },
     project3: {
         title: "macropad",
@@ -230,3 +230,108 @@ function updateTime() {
 }
 
 setInterval(updateTime, 1000);
+
+function getKarachiHour() {
+    const now = new Date();
+    const karachi = new Date(now.toLocaleString("en-US", { timeZone: "Asia/Karachi" }));
+    return karachi.getHours();
+}
+
+function applyDayNight() {
+    const hour = getKarachiHour();
+    let isNight = false;
+
+    if (hour >= 20) {
+        isNight = true;
+    }
+
+    if (hour < 6) {
+        isNight = true;
+    }
+
+    if (isNight) {
+        document.getElementById("cloudsvg").style.filter = "brightness(0.5) saturate(0.6)";
+        
+        document.body.style.backgroundColor = "rgb(20, 35, 60)";
+    
+        document.querySelector(".projects").style.background = 
+            "linear-gradient(180deg, rgb(20, 35, 60), rgb(40, 60, 30), rgb(25, 45, 20))";
+        
+        document.querySelector(".forest").style.background = 
+            "linear-gradient(180deg, rgb(25, 45, 20), rgb(10, 30, 15), rgb(5, 20, 10))";
+
+        document.getElementById("mountainsvg").style.filter = 
+            "brightness(0.6) saturate(0.7)";
+
+        document.getElementById("forestsvg").style.filter = 
+            "brightness(0.6) saturate(0.7)";
+
+        document.querySelector(".intro").style.color = "rgb(150, 180, 220)";
+
+        document.getElementById("startbutton").style.borderColor = "rgb(43, 44, 46)";
+        document.getElementById("startbutton").style.color = "rgb(43, 44, 46)";
+
+        document.querySelector(".intro h1:last-child").style.color = "rgb(24, 24, 26)";
+
+        document.querySelector(".intro h1:first-child").style.color = "rgb(24, 24, 26)";
+
+        document.getElementById("startbutton").classList.add("night");
+        
+        addStars();
+
+    } else {
+        document.getElementById("cloudsvg").style.filter = 
+            "brightness(0.85) contrast(1.5) saturate(0.5)";
+        
+        document.body.style.backgroundColor = "rgb(178, 209, 238)";
+        
+        document.querySelector(".projects").style.background = 
+            "linear-gradient(180deg, rgb(178, 209, 238), #dfbd28, rgb(228, 182, 31), rgb(201, 136, 15))";
+        
+        document.querySelector(".forest").style.background = 
+            "linear-gradient(180deg, rgb(201, 136, 15), rgb(8, 77, 25), rgb(38, 80, 9))";
+
+        document.querySelector(".intro").style.color = "rgb(33, 79, 122)";
+
+        document.querySelectorAll(".flag").forEach(flag => {
+            flag.style.filter = "";
+        });
+        document.querySelector(".campsvg").style.filter = "";
+        document.getElementById("startbutton").style.borderColor = "rgb(33, 79, 122)";
+        document.getElementById("startbutton").style.color = "rgb(33, 79, 122)";
+        document.querySelector(".intro h1:last-child").style.color = "rgb(33, 79, 122)";
+        document.querySelector(".intro h1:first-child").style.color = "rgb(33, 79, 122)";
+
+        document.getElementById("mountainsvg").style.filter = "";
+        document.getElementById("forestsvg").style.filter = "";
+        document.querySelectorAll(".star").forEach(s => s.remove());
+    }
+}
+
+applyDayNight();
+
+function addStars() {
+    const projects = document.querySelector(".projects");
+    
+    document.querySelectorAll(".star").forEach(s => s.remove());
+    
+    for (let i = 0; i < 80; i++) {
+        const star = document.createElement("div");
+        star.classList.add("star");
+        star.style.cssText = `
+            position: absolute;
+            width: ${Math.random() * 3 + 1}px;
+            height: ${Math.random() * 3 + 1}px;
+            background: white;
+            border-radius: 50%;
+            top: ${Math.random() * 60}%;
+            left: ${Math.random() * 100}%;
+            opacity: ${Math.random() * 0.8 + 0.2};
+            animation: twinkle ${Math.random() * 2 + 1}s infinite alternate;
+            z-index: 0;
+            pointer-events: none;
+        `;
+        projects.appendChild(star);
+    }
+}
+
