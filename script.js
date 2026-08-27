@@ -278,6 +278,7 @@ function applyDayNight() {
         document.getElementById("startbutton").classList.add("night");
         
         addStars();
+        addButterflies(isNight);
 
     } else {
         document.getElementById("cloudsvg").style.filter = 
@@ -333,5 +334,78 @@ function addStars() {
         `;
         projects.appendChild(star);
     }
+}
+
+function addButterflies(isNight) {
+    const forest = document.querySelector(".forest");
+    document.querySelectorAll(".butterfly").forEach(b => b.remove());
+
+    const colorSets = [
+        ["#ff8c3c", "#ffb347"], // orange
+        ["#e85d9c", "#f28bb5"], // pink
+        ["#f2c14e", "#f7de8c"], // yellow
+        ["#7fb8e8", "#a8d4f0"]  // blue
+    ];
+
+    for (let i = 0; i < 6; i++) {
+        const butterfly = document.createElement("div");
+        butterfly.classList.add("butterfly");
+
+        const [c1, c2] = colorSets[Math.floor(Math.random() * colorSets.length)];
+        const scale = Math.random() * 0.5 + 0.7;
+        const flapDuration = Math.random() * 0.25 + 0.35;
+        const pathDuration = Math.random() * 10 + 14;
+        const delay = Math.random() * 6;
+
+        const x1 = Math.random() * 70 + 10, y1 = Math.random() * 35 + 50;
+        const x2 = Math.random() * 70 + 10, y2 = Math.random() * 35 + 50;
+        const x3 = Math.random() * 70 + 10, y3 = Math.random() * 35 + 50;
+
+        butterfly.style.cssText = `
+            position: absolute;
+            top: 0; left: 0;
+            width: 30px; height: 30px;
+            transform: scale(${scale});
+            z-index: 2;
+            pointer-events: none;
+            animation: butterfly-path ${pathDuration}s ease-in-out infinite;
+            animation-delay: -${delay}s;
+        `;
+
+        if (isNight) {
+            butterfly.classList.add("glow");
+        }
+
+        butterfly.style.setProperty("--x1", `${x1}vw`);
+        butterfly.style.setProperty("--y1", `${y1}vh`);
+        butterfly.style.setProperty("--x2", `${x2}vw`);
+        butterfly.style.setProperty("--y2", `${y2}vh`);
+        butterfly.style.setProperty("--x3", `${x3}vw`);
+        butterfly.style.setProperty("--y3", `${y3}vh`);
+
+        butterfly.innerHTML = `
+            <svg viewBox="0 0 100 100" width="30" height="30">
+                <g class="wing-pair" style="animation-duration:${flapDuration}s;">
+                    <path class="wing-top-left" fill="${c1}"
+                        d="M50,50 C30,10 5,15 5,35 C5,55 30,55 50,50 Z" />
+                    <path class="wing-bottom-left" fill="${c2}"
+                        d="M50,50 C35,60 15,80 25,88 C40,92 48,65 50,50 Z" />
+                </g>
+                <g class="wing-pair-r" style="animation-duration:${flapDuration}s;">
+                    <path class="wing-top-right" fill="${c1}"
+                        d="M50,50 C70,10 95,15 95,35 C95,55 70,55 50,50 Z" />
+                    <path class="wing-bottom-right" fill="${c2}"
+                        d="M50,50 C65,60 85,80 75,88 C60,92 52,65 50,50 Z" />
+                </g>
+                <ellipse cx="50" cy="50" rx="2.5" ry="14" fill="#2b2118"/>
+            </svg>
+        `;
+
+        forest.appendChild(butterfly);
+    }
+}
+
+function removeButterflies() {
+    document.querySelectorAll(".butterfly").forEach(b => b.remove());
 }
 
