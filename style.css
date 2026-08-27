@@ -945,10 +945,10 @@ input[type="color"] {
     }
 
     #mountainsvg {
-    width: 100%;
-    height: auto;
-    transform: scaleX(1.3);
-    transform-origin: center center;
+        width: 100%;
+        height: auto;
+        transform: scaleX(1.3);
+        transform-origin: center center;
     }
 
     #flag1 {
@@ -1000,6 +1000,48 @@ input[type="color"] {
         height: 90vh;
         overflow-y: scroll;
         padding: 15px;
+    }
+    
+    #campinfo {
+        width: 85%;
+        max-width: 400px;
+        height: auto;
+        max-height: 80vh;
+        overflow-y: auto;
+        padding: 20px;
+        margin: 0 auto;
+    }
+
+    #closecamp {
+        right: 5px;
+        width: 40px;
+        height: 55px;
+        font-size: 1rem;
+        z-index: 1000;
+    }
+
+    #campinfocontent {
+        font-size: 1.2rem;
+        gap: 12px;
+    }
+
+    #campinfocontent h2 {
+        font-size: 1.3rem;
+    }
+
+    #campinfocontent p {
+        font-size: 0.85rem;
+        line-height: 1.6;
+    }
+
+    #alishttime {
+        font-size: 1.3rem;
+    }
+
+    #socials {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
     }
 
     #drawingcanvas {
