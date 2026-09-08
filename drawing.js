@@ -102,19 +102,43 @@ function initDrawing() {
     });
 
     document.getElementById("senddrawing").addEventListener("click", () => {
-        const name = prompt("what's your name?");
-        const message = prompt("leave a message! (optional)");
-        const imageData = canvas.toDataURL("image/jpeg", 0.5);
+    const name = prompt("what's your name?");
+    const message = prompt("leave a message! (optional)");
 
-        emailjs.send("service_63dqdjf", "template_6t8ennn", {
-            drawing: imageData,
-            from_name: name,
-            message: message,
-        }).then(() => {
+    const exportCanvas = document.createElement("canvas");
+    exportCanvas.width = canvas.width;
+    exportCanvas.height = canvas.height;
+    const exportCtx = exportCanvas.getContext("2d");
+    exportCtx.fillStyle = "#ffffff";
+    exportCtx.fillRect(0, 0, exportCanvas.width, exportCanvas.height);
+    exportCtx.drawImage(canvas, 0, 0);
+
+    exportCanvas.toBlob(async (blob) => {
+        try {
+            const formData = new FormData();
+            formData.append("file", blob);
+            formData.append("upload_preset", "drawing_app");
+
+            const uploadRes = await fetch(
+                "https://api.cloudinary.com/v1_1/rnrpiqkl/image/upload",
+                { method: "POST", body: formData }
+            );
+            const uploadData = await uploadRes.json();
+
+            if (!uploadData.secure_url) throw new Error("Upload failed");
+
+            await emailjs.send("service_63dqdjf", "template_6t8ennn", {
+                drawing_url: uploadData.secure_url,
+                from_name: name,
+                message: message,
+                time: new Date().toLocaleString(),
+            });
+
             alert("drawing sent! thanks " + name + "!");
-        }).catch((err) => {
+        } catch (err) {
             console.error(err);
             alert("something went wrong, try again!");
-        });
-    });
+        }
+    }, "image/jpeg", 0.8);
+});
 }
