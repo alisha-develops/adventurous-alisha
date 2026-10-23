@@ -113,6 +113,8 @@ function initDrawing() {
     exportCtx.fillRect(0, 0, exportCanvas.width, exportCanvas.height);
     exportCtx.drawImage(canvas, 0, 0);
 
+    window.open(exportCanvas.toDataURL());
+
     exportCanvas.toBlob(async (blob) => {
         try {
             const formData = new FormData();
