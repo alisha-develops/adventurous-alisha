@@ -237,3 +237,12 @@ function getKarachiHour() {
     return karachi.getHours();
 }
 
+window.addEventListener("load", () => {
+    document.getElementById("startbutton").click();
+});
+
+// window.addEventListener("load", () => {
+//     if (window.matchMedia("(max-width: 768px)").matches) {
+//         document.getElementById("startbutton").click();
+//     }
+// });

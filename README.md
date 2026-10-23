@@ -123,3 +123,5 @@ also: you see svgcode folder in the file tree, so the svg code here was exported
 ### reach out!
 
 if you're coming from hackclub wrokspace then pls reach me out on slack for any queries: @Alisha!
+
+# update (only for alchemize!)
